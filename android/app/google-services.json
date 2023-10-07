@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719512594029",
+    "project_id": "integrador-proyect-e8242",
+    "storage_bucket": "integrador-proyect-e8242.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719512594029:android:270648868bd1211b06c164",
+        "android_client_info": {
+          "package_name": "com.example.p_integrador"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG4JQA-mElUg5Ie3ZgppSaGiOKAZ7_ZVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
