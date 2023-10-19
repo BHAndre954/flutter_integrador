@@ -7,14 +7,12 @@ import 'package:p_integrador/screens/signup_screen.dart';
 import 'package:p_integrador/services/firebase_services.dart';
 import 'package:p_integrador/utils/color_utils.dart';
 
-
-
-
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
+  
 }
 
 class _SignInScreenState extends State<SignInScreen> {
@@ -28,56 +26,82 @@ class _SignInScreenState extends State<SignInScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("38761d"),
-          hexStringToColor("674ea7"),
-          hexStringToColor("f1c232")
+          hexStringToColor("ffffff"),
+          hexStringToColor("ffffff"),
+          hexStringToColor("ffffff")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
                 20, MediaQuery.of(context).size.height * 0.1, 20, 0),
-            child: Column(children: <Widget>[
-              logoWidget("assets/images/Logito.png"),
-            const SizedBox(
-                  height: 30,
-                ),
-                reusableTextField("Enter UserName", Icons.person_outline, false,
-                    _emailTextController),
-                const SizedBox(
-                  height: 20,
-                ),
-                reusableTextField("Enter Password", Icons.lock_outline, true,
-                    _passwordTextController),
-                const SizedBox(
-                  height: 5,
-                ),
-                forgetPassword(context),
-                firebaseUIButton(context, "Sign In", () {
-                  FirebaseAuth.instance
-                      .signInWithEmailAndPassword(
-                          email: _emailTextController.text,
-                          password: _passwordTextController.text)
-                      .then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }).onError((error, stackTrace) {
-                    print("Error ${error.toString()}");
-                  });
-                }),
+            child: Column(
+  children: <Widget>[
+    SizedBox(
+      height: 150,
+      width: 250,
+      child: Image.asset('assets/LOGO4.png'),
+    ),
+    SizedBox(height: 3),
+    Text(
+      "ComuniMundo",
+      style: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
+    ),
+    SizedBox(height: 10),
+    reusableTextField(
+      "Ingrese tu correo",
+      Icons.person_outline,
+      false,
+      _emailTextController,
+    ),
+    SizedBox(height: 20),
+    reusableTextField(
+      "Ingrese la contraseña",
+      Icons.lock_outline,
+      true,
+      _passwordTextController,
+    ),
+    SizedBox(height: 5),
+    firebaseUIButton(context, "Ingresar", () {
+      FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: _emailTextController.text,
+              password: _passwordTextController.text)
+          .then((value) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      }).onError((error, stackTrace) {
+        print("Error ${error.toString()}");
+      });
+    }),
+    SizedBox(height: 5),
+    forgetPassword(context),
+    SizedBox(height: 10),
+    ElevatedButton.icon(
+      onPressed: () async {
+        await FirebaseServices().signInWithGoogle();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      },
+      icon: Icon(Icons.account_circle_outlined),
+      label: Text("Ingresar con Google"),
+       style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.resolveWith((states) {
+      if (states.contains(MaterialState.pressed)) {
+        return Color(0xFF400C5C);
+      }
+      return Color(0xFF400C5C);
+    }),
+  ),
+),
+    SizedBox(height: 10),
                 signUpOption(),
                 const SizedBox(
                   height: 20,
-                ),// Botón de inicio de sesión con Google
-                // Botón de inicio de sesión con Google
-                ElevatedButton.icon(
-                  onPressed: () async {
-                await FirebaseServices().signInWithGoogle();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-                   icon: Icon(Icons.account_circle_outlined),
-                  label: Text("Sign in with Google"),
-                ),
+                ), 
               ],
             ),
           ),
@@ -86,22 +110,20 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  
-
-Row signUpOption() {
+  Row signUpOption() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Don't have account?",
-            style: TextStyle(color: Colors.white70)),
+        const Text("No tienes cuenta?",
+            style: TextStyle(color: Colors.black)),
         GestureDetector(
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => SignUpScreen()));
           },
           child: const Text(
-            " Sign Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            " REGISTRATE",
+            style: TextStyle(color: Color(0xFF400C5C), fontWeight: FontWeight.bold),
           ),
         )
       ],
@@ -115,8 +137,8 @@ Row signUpOption() {
       alignment: Alignment.bottomRight,
       child: TextButton(
         child: const Text(
-          "Forgot Password?",
-          style: TextStyle(color: Colors.white70),
+          "Olvidastes tu contraseña?",
+          style: TextStyle(color: Color(0xFF400C5C), fontWeight: FontWeight.bold),
           textAlign: TextAlign.right,
         ),
         onPressed: () => Navigator.push(
