@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:p_integrador/registrar_panel/grado.dart';
-import 'package:p_integrador/registrar_panel/inicio_registro.dart';
 import 'package:p_integrador/reusable_widgets/reusable_widgets.dart';
-import 'package:p_integrador/screens/home_screen.dart';
 import 'package:p_integrador/utils/color_utils.dart';
 import 'package:p_integrador/utils/splash_screen2.dart';
 import 'package:p_integrador/utils/v_bienvenida.dart';

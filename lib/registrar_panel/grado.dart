@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:p_integrador/registrar_panel/age.dart';
-import 'package:p_integrador/registrar_panel/inicio_registro.dart';
 import 'package:p_integrador/screens/signup_screen.dart';
 
 class Grado extends StatefulWidget {
