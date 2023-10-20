@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p_integrador/registrar_panel/inicio_registro.dart';
 import 'package:p_integrador/screens/signin_screen.dart';
 
 void main() {
@@ -59,10 +60,13 @@ class MyHalfAndHalfScreen extends StatelessWidget {
               ),
               child: Center(
                 child: Container(
-                  padding: EdgeInsets.all(20), // Espacio interior alrededor del texto
+                  padding: EdgeInsets.all(
+                      20), // Espacio interior alrededor del texto
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start, // Alinea el texto en la parte superior
-                    crossAxisAlignment: CrossAxisAlignment.center, // Alinea el texto al centro horizontalmente
+                    mainAxisAlignment: MainAxisAlignment
+                        .start, // Alinea el texto en la parte superior
+                    crossAxisAlignment: CrossAxisAlignment
+                        .center, // Alinea el texto al centro horizontalmente
                     children: <Widget>[
                       Center(
                         child: Text(
@@ -118,24 +122,33 @@ class MyHalfAndHalfScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 60), // Espacio entre el texto y los botones
+                      SizedBox(
+                          height: 40), // Espacio entre el texto y los botones
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center, // Alinea los botones al centro
+                        mainAxisAlignment: MainAxisAlignment
+                            .center, // Alinea los botones al centro
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF3F2194), // Color personalizado #3f2194
-                              borderRadius: BorderRadius.circular(20.0), // Borde redondeado
+                              color: Color(
+                                  0xFF3F2194), // Color personalizado #3f2194
+                              borderRadius: BorderRadius.circular(
+                                  20.0), // Borde redondeado
                             ),
                             child: TextButton(
                               onPressed: () {
-                                // Acción al presionar el botón "Registrar"
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Inicio_registro(),
+                                  ),
+                                );
                               },
                               child: Text(
                                 'Registrar',
                                 style: TextStyle(
-                                  color: Colors.white, // Color del texto en blanco
+                                  color:
+                                      Colors.white, // Color del texto en blanco
                                 ),
                               ),
                             ),
@@ -143,15 +156,16 @@ class MyHalfAndHalfScreen extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.white, // Color de fondo blanco
-                              borderRadius: BorderRadius.circular(20.0), // Borde redondeado
+                              borderRadius: BorderRadius.circular(
+                                  20.0), // Borde redondeado
                             ),
                             child: TextButton(
                               onPressed: () {
                                 Navigator.of(context).push(
-                                MaterialPageRoute(
-                                builder: (context) => SignInScreen(),
-                                ),
-                               );
+                                  MaterialPageRoute(
+                                    builder: (context) => SignInScreen(),
+                                  ),
+                                );
                               },
                               child: Text(
                                 'Ingresar',
