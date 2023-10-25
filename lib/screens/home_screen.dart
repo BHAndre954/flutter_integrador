@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:p_integrador/letras/opcion_letra.dart';
 import 'package:p_integrador/screens/signin_screen.dart';
 import 'package:p_integrador/services/firebase_services.dart';
 
@@ -118,8 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 5, // Añadir elevación o sombreado
                   ),
                   onPressed: () {
-                    // Coloca aquí la lógica que deseas ejecutar al hacer clic en el botón "Alfabeto"
-                  },
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Opcion_letra(),
+                  ),
+                );
+              },
                   child: Row(
                     children: [
                       Image.asset(

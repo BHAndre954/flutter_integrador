@@ -30,8 +30,7 @@ class _Grado extends State<Grado> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('¿A qué grado perteneces?',
-                style: TextStyle(fontSize: 24)),
+            Text('¿A qué grado perteneces?', style: TextStyle(fontSize: 24)),
             SizedBox(height: 60),
             ElevatedButton(
               onPressed: () {
