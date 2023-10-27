@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:p_integrador/letras/X.dart';
+import 'package:p_integrador/letras/Y.dart';
+import 'package:p_integrador/letras/Z.dart';
 import 'package:p_integrador/letras/alfabeto2.dart';
 
 class Alfabeto3 extends StatefulWidget {
@@ -32,6 +35,11 @@ class _Alfabeto3 extends State<Alfabeto3> {
               // Botón 1
               ElevatedButton(
                 onPressed: () {
+                   Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => X(),
+              ),
+            );
                   // Función para el botón 1
                 },
                 style: ElevatedButton.styleFrom(
@@ -50,6 +58,11 @@ class _Alfabeto3 extends State<Alfabeto3> {
               // Botón 2
               ElevatedButton(
                 onPressed: () {
+                   Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Y(),
+              ),
+            );
                   // Función para el botón 2
                 },
                 style: ElevatedButton.styleFrom(
@@ -68,6 +81,11 @@ class _Alfabeto3 extends State<Alfabeto3> {
               // Botón 3
               ElevatedButton(
                 onPressed: () {
+                   Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Z(),
+              ),
+            );
                   // Función para el botón 3
                 },
                 style: ElevatedButton.styleFrom(

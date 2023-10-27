@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/D.dart';
-import 'package:p_integrador/letras/alfabeto1.dart';
+import 'package:p_integrador/letras/N.dart';
+import 'package:p_integrador/letras/alfabeto2.dart';
 
-class C extends StatefulWidget {
+class M extends StatefulWidget {
   @override
-  _C createState() => _C();
+  _M createState() => _M();
 }
 
-class _C extends State<C> {
+class _M extends State<M> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _C extends State<C> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => Alfabeto1(),
+                builder: (context) => Alfabeto2(),
               ),
             );
           },
@@ -29,7 +29,7 @@ class _C extends State<C> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/Sa3.png', // Reemplaza con la ruta de tu imagen
+              'assets/Sa13.png', // Reemplaza con la ruta de tu imagen
               width: 500, // Ajusta el ancho de la imagen
               height: 500, // Ajusta el alto de la imagen
             ),
@@ -46,7 +46,7 @@ class _C extends State<C> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => D(),
+                    builder: (context) => N(),
                   ),
                 );
               },

@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:p_integrador/letras/A.dart';
 import 'package:p_integrador/letras/B.dart';
 import 'package:p_integrador/letras/C.dart';
+import 'package:p_integrador/letras/D.dart';
+import 'package:p_integrador/letras/E.dart';
+import 'package:p_integrador/letras/G.dart';
+import 'package:p_integrador/letras/H.dart';
+import 'package:p_integrador/letras/I.dart';
+import 'package:p_integrador/letras/J.dart';
+import 'package:p_integrador/letras/K.dart';
+import 'package:p_integrador/letras/L.dart';
 import 'package:p_integrador/letras/alfabeto2.dart';
+import 'package:p_integrador/letras/f.dart';
 import 'package:p_integrador/letras/opcion_letra.dart';
 
 class Alfabeto1 extends StatefulWidget {
@@ -108,7 +117,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 4
               ElevatedButton(
                 onPressed: () {
-                  // Función para el botón 4
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => D(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(0), // Sin relleno
@@ -127,6 +140,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               ElevatedButton(
                 onPressed: () {
                   // Función para el botón 5
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => E(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(0), // Sin relleno
@@ -144,6 +162,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 6
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>F(),
+                    ),
+                  );
                   // Función para el botón 6
                 },
                 style: ElevatedButton.styleFrom(
@@ -167,6 +190,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 4
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => G(),
+                    ),
+                  );
                   // Función para el botón 4
                 },
                 style: ElevatedButton.styleFrom(
@@ -185,6 +213,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 5
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => H(),
+                    ),
+                  );
                   // Función para el botón 5
                 },
                 style: ElevatedButton.styleFrom(
@@ -203,6 +236,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 6
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => I(),
+                    ),
+                  );
                   // Función para el botón 6
                 },
                 style: ElevatedButton.styleFrom(
@@ -226,6 +264,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 4
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => J(),
+                    ),
+                  );
                   // Función para el botón 4
                 },
                 style: ElevatedButton.styleFrom(
@@ -244,6 +287,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 5
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => K(),
+                    ),
+                  );
                   // Función para el botón 5
                 },
                 style: ElevatedButton.styleFrom(
@@ -262,6 +310,11 @@ class _Alfabeto1 extends State<Alfabeto1> {
               // Botón 6
               ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => L(),
+                    ),
+                  );
                   // Función para el botón 6
                 },
                 style: ElevatedButton.styleFrom(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/D.dart';
-import 'package:p_integrador/letras/alfabeto1.dart';
+import 'package:p_integrador/letras/opcion_letra.dart';
+import 'package:p_integrador/pregunta_letra4/pregunta4_1.dart';
 
-class C extends StatefulWidget {
+class Pregunta4 extends StatefulWidget {
   @override
-  _C createState() => _C();
+  _Pregunta4 createState() => _Pregunta4();
 }
 
-class _C extends State<C> {
+class _Pregunta4 extends State<Pregunta4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _C extends State<C> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => Alfabeto1(),
+                builder: (context) => Opcion_letra(),
               ),
             );
           },
@@ -28,10 +28,18 @@ class _C extends State<C> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              '¿Qué letra es la siguiente?',
+              style: TextStyle(
+                fontSize: 24, // Tamaño de fuente
+                fontWeight: FontWeight.bold, // Peso de la fuente
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre el texto y la imagen
             Image.asset(
-              'assets/Sa3.png', // Reemplaza con la ruta de tu imagen
-              width: 500, // Ajusta el ancho de la imagen
-              height: 500, // Ajusta el alto de la imagen
+              'assets/Pr7.png', // Reemplaza con la ruta de tu imagen
+              width: 350, // Ajusta el ancho de la imagen
+              height: 350, // Ajusta el alto de la imagen
             ),
             SizedBox(height: 30), // Espacio entre la imagen y el botón
             ElevatedButton(
@@ -46,7 +54,7 @@ class _C extends State<C> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => D(),
+                    builder: (context) => Pregunta4_1(),
                   ),
                 );
               },

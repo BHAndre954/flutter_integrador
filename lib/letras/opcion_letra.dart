@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_integrador/letras/alfabeto1.dart';
+import 'package:p_integrador/pregunta_letra/splash_screen3.dart';
 import 'package:p_integrador/screens/home_screen.dart';
 
 class Opcion_letra extends StatefulWidget {
@@ -65,6 +66,11 @@ class _Opcion_letra extends State<Opcion_letra> {
               minimumSize: Size(300, 40), // Ancho y alto del botón
             ),
             onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SplashScreen3(),
+                ),
+              );
               // Acción cuando se presiona el botón
             },
             child: Text('PRACTICA'),

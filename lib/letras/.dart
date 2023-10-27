@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/D.dart';
 import 'package:p_integrador/letras/alfabeto1.dart';
 
 class C extends StatefulWidget {
@@ -46,7 +45,7 @@ class _C extends State<C> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => D(),
+                    builder: (context) => Alfabeto1(),
                   ),
                 );
               },
