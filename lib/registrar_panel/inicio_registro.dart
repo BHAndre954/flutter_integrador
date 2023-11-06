@@ -16,6 +16,7 @@ class _Inicio_registro extends State<Inicio_registro> {
     
   ];
 
+  // ignore: unused_field
   int _currentImageIndex = 0;
 
   @override
