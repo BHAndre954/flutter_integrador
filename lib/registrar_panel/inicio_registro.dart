@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_integrador/registrar_panel/age.dart';
 import 'package:p_integrador/utils/v_bienvenida.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Inicio_registro extends StatefulWidget {
   @override
@@ -8,6 +9,15 @@ class Inicio_registro extends StatefulWidget {
 }
 
 class _Inicio_registro extends State<Inicio_registro> {
+  List<String> images = [
+    'assets/bienvenida.png',
+    'assets/bienvenida2.png',
+    'assets/bienvenida3.png',
+    
+  ];
+
+  int _currentImageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,19 +27,42 @@ class _Inicio_registro extends State<Inicio_registro> {
             flex: 2,
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xFF38148C), // Cambia el color a #38148C
+                gradient: LinearGradient(
+                  colors: [Color(0xFF38148C), Color(0xFF9A5FFF)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50.0),
                   bottomRight: Radius.circular(50.0),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  ),
+                ],
               ),
-              child: Center(
-                child: Image.asset(
-                  'assets/bienvenida.png', // Reemplaza 'tu_imagen.png' con la ruta de tu imagen
-                  width:
-                      350, // Ajusta el ancho de la imagen según tus necesidades
-                  height:
-                      350, // Ajusta la altura de la imagen según tus necesidades
+              child: CarouselSlider(
+                items: images.map((image) {
+                  return Image.asset(
+                    image,
+                    width: 250,
+                    height: 250,
+                    fit: BoxFit.cover,
+                  );
+                }).toList(),
+                options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  aspectRatio: 16 / 9,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _currentImageIndex = index;
+                    });
+                  },
                 ),
               ),
             ),
@@ -38,9 +71,7 @@ class _Inicio_registro extends State<Inicio_registro> {
             flex: 2,
             child: Container(
               color: Colors.white,
-              padding: EdgeInsets.all(20.0), // Espaciado interior
-
-              // Contenido de texto y botones
+              padding: EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -49,29 +80,40 @@ class _Inicio_registro extends State<Inicio_registro> {
                     'Crea tu Perfil',
                     style: TextStyle(
                       fontSize: 30,
+                      color: Color(0xFF38148C),
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  SizedBox(height: 8),
                   Text(
-                    'AHORA!',
+                    '¡AHORA!',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 24,
+                      color: Color(0xFF38148C),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(height: 16),
                   Text(
-                    '¡Crea tu perfil para guardar tu progreso de aprendizaje y seguir aprendiendo.',
+                    '¡Crea tu perfil para guardar tu progreso de aprendizaje y sigue aprendiendo!',
                     textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey[600],
+                    ),
                   ),
-                  SizedBox(height: 2),
+                  SizedBox(height: 8),
                   Text(
                     'Aprender es divertido.',
                     textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey[600],
+                    ),
                   ),
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       ElevatedButton(
                         onPressed: () {
@@ -82,14 +124,11 @@ class _Inicio_registro extends State<Inicio_registro> {
                           );
                         },
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          foregroundColor:
-                              MaterialStateProperty.all(Color(0xFF38148C)),
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          foregroundColor: MaterialStateProperty.all(Color(0xFF38148C)),
                         ),
                         child: Text('Atrás'),
                       ),
-                      SizedBox(width: 100),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
@@ -99,10 +138,8 @@ class _Inicio_registro extends State<Inicio_registro> {
                           );
                         },
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFF38148C)),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(Color(0xFF38148C)),
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
                         ),
                         child: Text('Siguiente'),
                       ),
