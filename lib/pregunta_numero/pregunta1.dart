@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/opcion_letra.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1_1.dart';
+import 'package:p_integrador/numeros/opcion_numero.dart';
+import 'package:p_integrador/pregunta_numero/pregunta1_1.dart';
 
 class Pregunta1 extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _Pregunta1 extends State<Pregunta1> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => Opcion_letra(),
+                builder: (context) => Opcion_numero(),
               ),
             );
           },
@@ -29,7 +29,7 @@ class _Pregunta1 extends State<Pregunta1> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '¿Qué letra es la siguiente?',
+              '¿Cuanto es la suma?',
               style: TextStyle(
                 fontSize: 24, // Tamaño de fuente
                 fontWeight: FontWeight.bold, // Peso de la fuente
@@ -37,7 +37,7 @@ class _Pregunta1 extends State<Pregunta1> {
             ),
             SizedBox(height: 20), // Espacio entre el texto y la imagen
             Image.asset(
-              'assets/Pr2.png', // Reemplaza con la ruta de tu imagen
+              'assets/Pr9.png', // Reemplaza con la ruta de tu imagen
               width: 350, // Ajusta el ancho de la imagen
               height: 350, // Ajusta el alto de la imagen
             ),

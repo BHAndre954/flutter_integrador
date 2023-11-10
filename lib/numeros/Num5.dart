@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/opcion_letra.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1_1.dart';
+import 'package:p_integrador/numeros/Num6.dart';
+import 'package:p_integrador/screens/home_screen.dart';
 
-class Pregunta1 extends StatefulWidget {
+class Num5 extends StatefulWidget {
   @override
-  _Pregunta1 createState() => _Pregunta1();
+  _Num5 createState() => _Num5();
 }
 
-class _Pregunta1 extends State<Pregunta1> {
+class _Num5 extends State<Num5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _Pregunta1 extends State<Pregunta1> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => Opcion_letra(),
+                builder: (context) => HomeScreen(),
               ),
             );
           },
@@ -28,18 +28,10 @@ class _Pregunta1 extends State<Pregunta1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '¿Qué letra es la siguiente?',
-              style: TextStyle(
-                fontSize: 24, // Tamaño de fuente
-                fontWeight: FontWeight.bold, // Peso de la fuente
-              ),
-            ),
-            SizedBox(height: 20), // Espacio entre el texto y la imagen
             Image.asset(
-              'assets/Pr2.png', // Reemplaza con la ruta de tu imagen
-              width: 350, // Ajusta el ancho de la imagen
-              height: 350, // Ajusta el alto de la imagen
+              'assets/Num5.png', // Reemplaza con la ruta de tu imagen
+              width: 500, // Ajusta el ancho de la imagen
+              height: 500, // Ajusta el alto de la imagen
             ),
             SizedBox(height: 30), // Espacio entre la imagen y el botón
             ElevatedButton(
@@ -55,7 +47,7 @@ class _Pregunta1 extends State<Pregunta1> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Pregunta1_1(),
+                    builder: (context) => Num6(),
                   ),
                 );
               },

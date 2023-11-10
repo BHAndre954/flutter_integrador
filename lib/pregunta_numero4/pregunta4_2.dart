@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/letras/opcion_letra.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1_1.dart';
+import 'package:p_integrador/numeros/opcion_numero.dart';
+import 'package:p_integrador/pregunta_numero5/splash_screen30.dart';
 
-class Pregunta1 extends StatefulWidget {
+class Pregunta4_2 extends StatefulWidget {
   @override
-  _Pregunta1 createState() => _Pregunta1();
+  _Pregunta4_2 createState() => _Pregunta4_2();
 }
 
-class _Pregunta1 extends State<Pregunta1> {
+class _Pregunta4_2 extends State<Pregunta4_2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _Pregunta1 extends State<Pregunta1> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => Opcion_letra(),
+                builder: (context) => Opcion_numero(),
               ),
             );
           },
@@ -29,7 +29,7 @@ class _Pregunta1 extends State<Pregunta1> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '¿Qué letra es la siguiente?',
+              'La respuesta correcta es:',
               style: TextStyle(
                 fontSize: 24, // Tamaño de fuente
                 fontWeight: FontWeight.bold, // Peso de la fuente
@@ -37,7 +37,7 @@ class _Pregunta1 extends State<Pregunta1> {
             ),
             SizedBox(height: 20), // Espacio entre el texto y la imagen
             Image.asset(
-              'assets/Pr2.png', // Reemplaza con la ruta de tu imagen
+              'assets/Num3.png', // Reemplaza con la ruta de tu imagen
               width: 350, // Ajusta el ancho de la imagen
               height: 350, // Ajusta el alto de la imagen
             ),
@@ -55,7 +55,7 @@ class _Pregunta1 extends State<Pregunta1> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Pregunta1_1(),
+                    builder: (context) => SplashScreen30(),
                   ),
                 );
               },

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1.dart';
+import 'package:p_integrador/pregunta_numero5/pregunta5_2.dart';
 
-class SplashScreen3 extends StatefulWidget {
+class SplashScreen32 extends StatefulWidget {
   @override
-  _SplashScreenState3 createState() => _SplashScreenState3();
+  _SplashScreenState32 createState() => _SplashScreenState32();
 }
 
-class _SplashScreenState3 extends State<SplashScreen3> {
+class _SplashScreenState32 extends State<SplashScreen32> {
   @override
   void initState() {
     super.initState();
 
     Future.delayed(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => Pregunta1(),
+        builder: (context) => Pregunta5_2(),
       ));
     });
   }
@@ -27,15 +27,15 @@ class _SplashScreenState3 extends State<SplashScreen3> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset('assets/Pr3.png'),
+            SizedBox(height: 15),
             Text(
-              'PREGUNTA 1',
+              'CORRECTO',
               style: TextStyle(
                 fontSize: 24, // Tamaño de fuente
                 fontWeight: FontWeight.bold, // Negrita
               ),
             ),
-            Image.asset('assets/Pr1.png'),
-            SizedBox(height: 15),
           ],
         ),
       ),

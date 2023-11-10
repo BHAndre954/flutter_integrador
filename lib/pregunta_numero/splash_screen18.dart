@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1.dart';
+import 'package:p_integrador/pregunta_numero/pregunta1.dart';
 
-class SplashScreen3 extends StatefulWidget {
+class SplashScreen18 extends StatefulWidget {
   @override
-  _SplashScreenState3 createState() => _SplashScreenState3();
+  _SplashScreenState18 createState() => _SplashScreenState18();
 }
 
-class _SplashScreenState3 extends State<SplashScreen3> {
+class _SplashScreenState18 extends State<SplashScreen18> {
   @override
   void initState() {
     super.initState();

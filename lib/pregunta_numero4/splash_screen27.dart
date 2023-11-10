@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:p_integrador/pregunta_letra/pregunta1.dart';
+import 'package:p_integrador/pregunta_numero4/pregunta4.dart';
 
-class SplashScreen3 extends StatefulWidget {
+class SplashScreen27 extends StatefulWidget {
   @override
-  _SplashScreenState3 createState() => _SplashScreenState3();
+  _SplashScreenState27 createState() => _SplashScreenState27();
 }
 
-class _SplashScreenState3 extends State<SplashScreen3> {
+class _SplashScreenState27 extends State<SplashScreen27> {
   @override
   void initState() {
     super.initState();
 
     Future.delayed(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => Pregunta1(),
+        builder: (context) => Pregunta4(),
       ));
     });
   }
@@ -28,7 +28,7 @@ class _SplashScreenState3 extends State<SplashScreen3> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'PREGUNTA 1',
+              'PREGUNTA 4',
               style: TextStyle(
                 fontSize: 24, // Tamaño de fuente
                 fontWeight: FontWeight.bold, // Negrita
