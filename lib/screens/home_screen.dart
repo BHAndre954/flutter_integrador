@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:p_integrador/letras/opcion_letra.dart';
 import 'package:p_integrador/screens/signin_screen.dart';
 import 'package:p_integrador/services/firebase_services.dart';
+import 'package:p_integrador/utils/dasboard.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -160,6 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 5,
                   ),
                   onPressed: () {
+                     
                     // Coloca aquí la lógica que deseas ejecutar al hacer clic en el botón "Número"
                   },
                   child: Row(
@@ -218,6 +220,45 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+            SizedBox(height: 20), // Espacio entre los botones
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.white,
+        onPrimary: Color(0xFF400C5C),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: Color(0xFF400C5C),
+          ),
+          borderRadius: BorderRadius.circular(10), // Ajusta el radio de borde según tu preferencia
+        ),
+        elevation: 5,
+      ),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => Dashboard(),
+          ),
+        );
+        // Coloca aquí la lógica que deseas ejecutar al hacer clic en el botón "METRICAS"
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Text(
+          "METRICAS",
+          style: TextStyle(
+            fontSize: 20,
+            color: Color(0xFF400C5C),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    ),
+  ],
+),
+
           ],
         ),
       ),
