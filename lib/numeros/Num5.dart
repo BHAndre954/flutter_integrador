@@ -10,6 +10,9 @@ class Num5 extends StatefulWidget {
 class _Num5 extends State<Num5> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    bool isHorizontal = screenWidth > 600;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -25,37 +28,78 @@ class _Num5 extends State<Num5> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/Num5.png', // Reemplaza con la ruta de tu imagen
-              width: 500, // Ajusta el ancho de la imagen
-              height: 500, // Ajusta el alto de la imagen
-            ),
-            SizedBox(height: 30), // Espacio entre la imagen y el botón
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFF38148C), // Color de fondo
-                onPrimary: Colors.white, // Color del texto
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(30.0), // Bordes circulares
-                ),
-                minimumSize: Size(200, 40), // Ancho y alto del botón
-              ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Num6(),
-                  ),
-                );
-              },
-              child: Text('SIGUIENTE'),
-            ),
-          ],
-        ),
+        child: isHorizontal
+            ? _buildHorizontalLayout(screenWidth)
+            : _buildVerticalLayout(screenWidth),
       ),
+    );
+  }
+
+  Widget _buildHorizontalLayout(double screenWidth) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Image.asset(
+            'assets/Num5.png',
+            width: screenWidth * 0.4,
+            height: screenWidth * 0.4,
+          ),
+        ),
+        SizedBox(
+            width: screenWidth * 0.1), // Espacio entre la imagen y el botón
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color(0xFF38148C),
+            onPrimary: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            minimumSize: Size(150, 40),
+          ),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Num6(),
+              ),
+            );
+          },
+          child: Text('SIGUIENTE'),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildVerticalLayout(double screenWidth) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          'assets/Num5.png',
+          width: screenWidth * 0.8,
+          height: screenWidth * 0.8,
+        ),
+        SizedBox(height: 30),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color(0xFF38148C),
+            onPrimary: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            minimumSize: Size(200, 40),
+          ),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Num6(),
+              ),
+            );
+          },
+          child: Text('SIGUIENTE'),
+        ),
+      ],
     );
   }
 }
