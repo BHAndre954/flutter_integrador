@@ -20,23 +20,28 @@ class _SplashScreenState2 extends State<SplashScreen2> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Color(0xFF400C5C), // Color personalizado #400c5c
+      backgroundColor: Color(0xFF400C5C),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/cheack.png'),
-            SizedBox(height: 15),
+            Image.asset(
+              'assets/cheack.png',
+              height: screenHeight * 0.3, // Ajuste dinámico de altura
+            ),
+            SizedBox(height: screenHeight * 0.02),
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.025),
             Text(
               'EXCELENTE',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: screenHeight * 0.025,
               ),
             ),
           ],

@@ -13,7 +13,6 @@ class _Inicio_registro extends State<Inicio_registro> {
     'assets/bienvenida.png',
     'assets/bienvenida2.png',
     'assets/bienvenida3.png',
-    
   ];
 
   // ignore: unused_field
@@ -21,8 +20,12 @@ class _Inicio_registro extends State<Inicio_registro> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             flex: 2,
@@ -50,8 +53,8 @@ class _Inicio_registro extends State<Inicio_registro> {
                 items: images.map((image) {
                   return Image.asset(
                     image,
-                    width: 250,
-                    height: 250,
+                    width: screenWidth * 0.7,
+                    height: screenHeight * 0.4,
                     fit: BoxFit.cover,
                   );
                 }).toList(),
@@ -69,50 +72,53 @@ class _Inicio_registro extends State<Inicio_registro> {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
               color: Colors.white,
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(
-                    'Crea tu Perfil',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Color(0xFF38148C),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Column(
+                    children: <Widget>[
+                      Text(
+                        'Crea tu Perfil',
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.04,
+                          color: Color(0xFF38148C),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        '¡AHORA!',
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.03,
+                          color: Color(0xFF38148C),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        '¡Crea tu perfil para guardar tu progreso de aprendizaje y sigue aprendiendo!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.018,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.01),
+                      Text(
+                        'Aprender es divertido.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.018,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    '¡AHORA!',
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Color(0xFF38148C),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    '¡Crea tu perfil para guardar tu progreso de aprendizaje y sigue aprendiendo!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Aprender es divertido.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[

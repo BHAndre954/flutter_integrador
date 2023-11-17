@@ -26,17 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/splash.png'),
-            SizedBox(height: 15),
+            Image.asset(
+              'assets/splash.png',
+              height: MediaQuery.of(context).size.height * 0.4, // Ajusta la altura de la imagen
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03), // Espacio ajustado
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.04), // Espacio ajustado
             Text(
               'COMUNIMUNDO',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: MediaQuery.of(context).size.width * 0.05, // Ajusta el tamaño del texto
               ),
             ),
           ],
