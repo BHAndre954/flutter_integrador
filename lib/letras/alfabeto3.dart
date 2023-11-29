@@ -26,8 +26,9 @@ class _Alfabeto3 extends State<Alfabeto3> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
           SizedBox(height: 20), // Espacio en blanco en la parte superior
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -104,6 +105,7 @@ class _Alfabeto3 extends State<Alfabeto3> {
           ),
         ],
       ),
+    ),
     );
   }
 }

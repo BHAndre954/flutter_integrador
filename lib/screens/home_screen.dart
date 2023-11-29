@@ -4,6 +4,7 @@ import 'package:p_integrador/letras/opcion_letra.dart';
 import 'package:p_integrador/numeros/opcion_numero.dart';
 import 'package:p_integrador/screens/signin_screen.dart';
 import 'package:p_integrador/services/firebase_services.dart';
+import 'package:p_integrador/sociales/Social1.dart';
 import 'package:p_integrador/utils/dasboard.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -204,7 +205,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             elevation: 5,
                           ),
                           onPressed: () {
-                            // Lógica para el botón "Sociales"
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Social1(),
+                              ),
+                            );
                           },
                           child: Row(
                             children: [
