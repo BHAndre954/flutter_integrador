@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Image.asset(
                     'assets/foto2.png',
-                    width: screenWidth * 0.4,
+                    width: screenWidth * 0.2,
                     height: screenHeight * 0.2,
                   ),
                 ],
